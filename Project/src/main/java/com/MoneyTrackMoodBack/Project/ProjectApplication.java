@@ -1,5 +1,6 @@
 package com.MoneyTrackMoodBack.Project;
 
+import com.MoneyTrackMoodBack.Project.model.Utilisateur;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

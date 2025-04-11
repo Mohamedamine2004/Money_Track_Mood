@@ -1,0 +1,173 @@
+/* Import a modern font (in HTML: <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">) */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container */
+.login-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #a4cafe, #ffffff); /* Soft blue to white */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+  }
+
+
+/* Login Box */
+.login-box {
+  background: linear-gradient(145deg, #bedef4, #ffffff); /* Soft gradient: light blue to white */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+/* Hover effect */
+.login-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(79, 148, 255, 0.2);
+}
+
+
+/* Welcome Text */
+.welcome-text {
+  font-size: 24px;
+  color: #4f4f4f;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Form Inputs */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form label {
+  color: #555;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+.login-form input:focus {
+  border-color: #4f94ff;
+  outline: none;
+}
+
+/* Forgot Password */
+.forgot-password {
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+/* Sign-in Button */
+.login-btn {
+  background: linear-gradient(90deg, #4f94ff, #7c5fff);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #3d7be4, #5b47d2);
+}
+
+/* Continue with text */
+.continue-with {
+  color: #666;
+  font-size: 12px;
+  margin: 20px 0 10px;
+}
+
+/* Social Buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-buttons button {
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.social-buttons button:hover {
+  transform: scale(1.1);
+}
+
+/* Social Button Colors */
+.google-btn {
+  background: #db4437;
+  color: white;
+}
+
+.github-btn {
+  background: #333;
+  color: white;
+}
+
+.facebook-btn {
+  background: #1877f2;
+  color: white;
+}
+
+/* Register Link */
+.register-link {
+  font-size: 13px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.register-link a {
+  color: #4f94ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error Message */
+.error {
+  color: #e74c3c;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+/* Success Message */
+.success {
+  color: #27ae60;
+  font-size: 1rem;
+  margin-top: 10px;
+}
