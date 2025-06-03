@@ -1,5 +1,5 @@
 # Money_Track_Mood
-
+![Aperçu de l'application](/images/Capture%20d'%C3%A9cran%202025-04-29%20181321.png)
 **Money_Track_Mood** est une application intelligente et intuitive qui aide les utilisateurs à suivre leurs dépenses tout en surveillant leur état émotionnel.  
 En analysant le lien entre les émotions et les comportements financiers, elle permet d’identifier les déclencheurs des achats impulsifs, d’établir des objectifs personnalisés et d’améliorer le bien-être global.
 
