@@ -1,54 +1,108 @@
-package com.MoneyTrackMoodBack.Project.model;
+    package com.MoneyTrackMoodBack.Project.model;
 
-import jakarta.persistence.*;
+    import com.fasterxml.jackson.annotation.JsonBackReference;
+    import jakarta.persistence.*;
+    import jakarta.validation.constraints.NotNull;
 
-@Entity
-public class Depense {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String date;
-    private Double montant;
-    private String categorie;
-    private String humeur;
-    private String description;
+    import java.time.LocalDate;
 
-    @ManyToOne
-    @JoinColumn(name = "utilisateur_id")
-    private Utilisateur utilisateur;
+    @Entity
+    @Table(name = "depense")
+    public class Depense {
 
-    // Constructeurs
-    public Depense() {}
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    public Depense(Long id, String date, Double montant, String categorie, String humeur, String description, Utilisateur utilisateur) {
-        this.id = id;
-        this.date = date;
-        this.montant = montant;
-        this.categorie = categorie;
-        this.humeur = humeur;
-        this.description = description;
-        this.utilisateur = utilisateur;
+        @NotNull
+        @Column(nullable = false)
+        private LocalDate date;
+
+        @NotNull
+        @Column(nullable = false)
+        private Double montant;
+
+        @NotNull
+        @Enumerated(EnumType.STRING)
+        @Column(nullable = false)
+        private Categorie categorie;
+
+        private String description;
+
+        @Enumerated(EnumType.STRING)
+        private Humeur humeur;
+
+        @ManyToOne(fetch = FetchType.LAZY)
+        @JoinColumn(name = "utilisateur_id", nullable = false)
+        @JsonBackReference
+        private Utilisateur utilisateur;
+
+        // Constructors
+        public Depense() {}
+
+        public Depense(LocalDate date, Double montant, Categorie categorie, String description, Humeur humeur, Utilisateur utilisateur) {
+            this.date = date;
+            this.montant = montant;
+            this.categorie = categorie;
+            this.description = description;
+            this.humeur = humeur;
+            this.utilisateur = utilisateur;
+        }
+
+        // Getters and Setters
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public LocalDate getDate() {
+            return date;
+        }
+
+        public void setDate(LocalDate date) {
+            this.date = date;
+        }
+
+        public Double getMontant() {
+            return montant;
+        }
+
+        public void setMontant(Double montant) {
+            this.montant = montant;
+        }
+
+        public Categorie getCategorie() {
+            return categorie;
+        }
+
+        public void setCategorie(Categorie categorie) {
+            this.categorie = categorie;
+        }
+
+        public String getDescription() {
+            return description;
+        }
+
+        public void setDescription(String description) {
+            this.description = description;
+        }
+
+        public Humeur getHumeur() {
+            return humeur;
+        }
+
+        public void setHumeur(Humeur humeur) {
+            this.humeur = humeur;
+        }
+
+        public Utilisateur getUtilisateur() {
+            return utilisateur;
+        }
+
+        public void setUtilisateur(Utilisateur utilisateur) {
+            this.utilisateur = utilisateur;
+        }
     }
-
-    // Getters et Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getDate() { return date; }
-    public void setDate(String date) { this.date = date; }
-
-    public Double getMontant() { return montant; }
-    public void setMontant(Double montant) { this.montant = montant; }
-
-    public String getCategorie() { return categorie; }
-    public void setCategorie(String categorie) { this.categorie = categorie; }
-
-    public String getHumeur() { return humeur; }
-    public void setHumeur(String humeur) { this.humeur = humeur; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public Utilisateur getUtilisateur() { return utilisateur; }
-    public void setUtilisateur(Utilisateur utilisateur) { this.utilisateur = utilisateur; }
-}

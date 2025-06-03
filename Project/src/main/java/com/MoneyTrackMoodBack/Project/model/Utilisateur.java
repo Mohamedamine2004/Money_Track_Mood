@@ -1,5 +1,6 @@
 package com.MoneyTrackMoodBack.Project.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class Utilisateur {
 
 
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonBackReference
     private List<Depense> depenses;
     // Constructeur
     public Utilisateur() {}
@@ -52,6 +54,10 @@ public class Utilisateur {
     }
     public void setDepenses(List<Depense> depenses) {
         this.depenses = depenses;
+    }
+    public void gererDepense(Depense depense) {
+        depense.setUtilisateur(this);
+        this.depenses.add(depense);
     }
 
 

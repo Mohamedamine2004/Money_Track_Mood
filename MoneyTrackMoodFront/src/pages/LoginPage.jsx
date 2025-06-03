@@ -100,7 +100,7 @@ const LoginPage = () => {
           </div>
 
           <p className="register-link">
-            Don't have an account yet? <a href="/create-account">Register for free</a>
+            Don't have an account yet? <a href="/CreateAccount">Register for free</a>
           </p>
         </form>
       </div>

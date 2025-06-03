@@ -1,9 +1,11 @@
 package com.MoneyTrackMoodBack.Project.service;
 
+import com.MoneyTrackMoodBack.Project.model.Utilisateur;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,12 @@ public class JWTService {
 
     @Value("${jwt.secret}")
     private String secretkey;
+    private final UtilisateurService utilisateurService;
+
+    @Autowired
+    public JWTService(UtilisateurService utilisateurService) {
+        this.utilisateurService = utilisateurService;
+    }
     /*public JWTService() {
         try {
             KeyGenerator keyGen = KeyGenerator.getInstance("HmacSHA256");
@@ -79,5 +87,13 @@ public class JWTService {
 
     private Date extractExpiration(String token) {
         return extractClaim(token, Claims::getExpiration);
+    }
+
+    public Long getUserIdFromUsername(String username) {
+        Utilisateur utilisateur = utilisateurService.findByNom(username);
+        if (utilisateur == null) {
+            throw new IllegalArgumentException("User not found: " + username);
+        }
+        return utilisateur.getId();
     }
 }

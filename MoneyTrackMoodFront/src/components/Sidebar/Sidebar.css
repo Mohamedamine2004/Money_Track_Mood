@@ -1,0 +1,138 @@
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  padding: 32px 24px;
+  border-right: 1px solid #b2c8e6;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.06);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter';
+}
+
+.sidebar-header {
+  margin-bottom: 48px;
+}
+
+.sidebar-header h2 {
+  font-size: 28px;
+
+  
+ 
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #475569;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.sidebar-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.sidebar-item.active {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.sidebar-item:hover {
+  background: #f1f5f9;
+  color: #2563eb;
+  transform: translateX(4px);
+}
+
+.sidebar-item.active:hover {
+  background: #1d4ed8;
+  color: #ffffff;
+  transform: none;
+}
+
+.sidebar-item .icon {
+  margin-right: 14px;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.sidebar-item:hover .icon {
+  transform: scale(1.1);
+}
+
+.sidebar-item.logout {
+  margin-top: auto;
+  padding: 16px 20px;
+}
+
+.sidebar-item.logout button {
+  background: none;
+  border: none;
+  color: #dc2626;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.sidebar-item.logout button:hover {
+  color: #b91c1c;
+}
+
+.sidebar-item.logout .icon {
+  color: #dc2626;
+}
+
+.sidebar-item.logout:hover .icon {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+
+  .sidebar-header {
+    margin-bottom: 32px;
+  }
+
+  .sidebar-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .sidebar-item {
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+  }
+
+  .sidebar-item.logout {
+    margin-top: 16px;
+  }
+}

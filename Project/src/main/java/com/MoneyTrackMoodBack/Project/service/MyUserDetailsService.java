@@ -2,7 +2,7 @@ package com.MoneyTrackMoodBack.Project.service;
 
 import com.MoneyTrackMoodBack.Project.model.Utilisateur;
 import com.MoneyTrackMoodBack.Project.model.UtilisateurPrincipal;
-import com.MoneyTrackMoodBack.Project.repository.UtilisateurRepo;
+import com.MoneyTrackMoodBack.Project.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -14,14 +14,14 @@ import java.util.Optional;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
     @Autowired
-    private UtilisateurRepo utilisateurRepo;
+    private UtilisateurRepository utilisateurRepo;
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Utilisateur utilisateur = utilisateurRepo.findByNom(username);
-        if (utilisateur==null) {
-            throw new UsernameNotFoundException("Utilisateur non trouvé avec nom: " + username);
-        }
-        return new UtilisateurPrincipal(utilisateur);
+        return utilisateurRepo.findByNom(username)
+                .map(UtilisateurPrincipal::new)
+                .orElseThrow(() -> new UsernameNotFoundException("Utilisateur non trouvé avec nom: " + username));
     }
+
 }

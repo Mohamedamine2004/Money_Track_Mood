@@ -1,0 +1,67 @@
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .expense-table th,
+  .expense-table td {
+    padding: 16px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .expense-table th {
+    background: #f8f9fa;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  
+  .expense-table td {
+    color: #495057;
+    font-size: 14px;
+    
+  }
+  
+  .action-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .action-btn.modify {
+    background: #28a745;
+    color: #ffffff;
+  }
+  
+  .action-btn.modify:hover {
+    background: #0d7623;
+  }
+  
+  .action-btn.delete {
+    background: #dc3545;
+    color: #ffffff;
+  }
+  
+  .action-btn.delete:hover {
+    background: #920815;
+  }
+  
+  @media (max-width: 768px) {
+    .expense-table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+  
+  .expense-table td:nth-child(5) {
+    text-align: center; 
+  }

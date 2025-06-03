@@ -1,0 +1,205 @@
+.statistics-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9fafb 0%, #f4f7fe 100%); /* Subtle gradient for depth */
+}
+
+.main-content {
+  flex: 1;
+  padding: 48px; /* Increased padding for a more spacious look */
+  background: transparent;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  padding: 24px;
+}
+
+.statistics-section {
+  background: #ffffff;
+  padding: 32px; /* Increased padding */
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05); /* Softer shadow */
+  width: 100%;
+}
+
+.statistics-section h2 {
+  font-size: 28px; /* Larger heading */
+  color: #333333;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+
+.statistics-charts {
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.chart-row {
+  display: flex;
+  gap: 32px; /* Increased gap */
+  margin-bottom: 32px;
+}
+
+.statistics-table {
+  background: #ffffff;
+  padding: 24px; /* Increased padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); /* Softer shadow */
+  flex: 1;
+  transition: transform 0.2s ease; /* Subtle hover effect */
+}
+
+.statistics-table:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.statistics-table.full-width {
+  flex: none;
+  width: 100%;
+}
+
+.statistics-table h3 {
+  font-size: 20px; /* Slightly larger */
+  color: #333333;
+  font-weight: 600;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Subtle letter spacing for professionalism */
+}
+
+.chart-container {
+  position: relative;
+  height: 280px; /* Slightly taller for better proportion */
+  width: 100%;
+}
+
+/* Expense Category Styling */
+.expense-category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Increased gap for better spacing */
+  width: 100%;
+}
+
+.expense-category-row {
+  display: flex;
+  align-items: center;
+  gap: 24px; /* Increased gap */
+  width: 100%;
+}
+
+.category-label {
+  font-size: 15px; /* Slightly larger */
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+  width: 140px; /* Adjusted width for alignment */
+}
+
+.bar-container {
+  flex: 1;
+  height: 14px; /* Slightly thicker bars */
+  background: #e5e7eb;
+  border-radius: 8px; /* Softer corners */
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: #4a998f; /* Muted teal for a professional look */
+  border-radius: 8px;
+  transition: width 0.5s ease-in-out; /* Smoother animation */
+}
+
+.value-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 160px; /* Adjusted width for alignment */
+}
+
+.bar-value {
+  font-size: 15px; /* Slightly larger */
+  font-weight: 600;
+  color: #333333;
+}
+
+.bar-percentage {
+  font-size: 13px; /* Slightly larger */
+  color: #666666;
+}
+
+.statistics-tables {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider columns */
+  gap: 32px; /* Increased gap */
+}
+
+.stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.stats-table th,
+.stats-table td {
+  padding: 18px; /* Increased padding */
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.stats-table th {
+  background: #f9fafb;
+  color: #333333;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.stats-table td {
+  color: #666666;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .statistics-wrapper {
+    flex-direction: column;
+  }
+
+  .main-content {
+    padding: 32px;
+  }
+
+  .chart-row {
+    flex-direction: column;
+  }
+
+  .statistics-tables {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .expense-category-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-label,
+  .value-container {
+    width: 100%;
+    text-align: left;
+  }
+
+  .value-container {
+    align-items: flex-start;
+  }
+}
